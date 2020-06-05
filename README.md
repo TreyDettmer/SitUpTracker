@@ -11,3 +11,7 @@
 - [Pillow](https://pypi.org/project/Pillow/)
 - [playsound](https://pypi.org/project/playsound/)
 - [SpeechRecognition](https://pypi.org/project/SpeechRecognition/)
+
+### Required Hardware
+- Microphone
+- Webcam
