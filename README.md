@@ -29,3 +29,16 @@ Lay down as if you are at the beginning of a sit-up and say "Calibrate". The app
 ![Example](misc/SitupTrackerROIdemo.gif)
 
 Now press the Escape key.
+
+Get back into sit-up position and line your head and knee up with the yellow boxes. When you are ready for the application to start tracking your movement, say "Confirm". You should here a sound from the application notifying you that tracking has begun.
+
+### Tracking Errors
+Occasionally, the application may lose track of your head or knee location. If you notice this or the right side of the screen turns red (signifying that the tracker has failed), recalibrate the application (i.e. redraw the boxes around your whole head, specific head region, and knee region).
+
+The tracker does best when the object it is tracking is a different color from its surrounding objects, so try not to have a background with colors that could confuse the tracker. Also, don't make any jerky movements as this will likely confuse the tracker, especially with the low framerate of most webcams.
+
+### Reaching Your Sit-up Goal
+Once you have reached your sit-up goal, the application will make a chime sound to notify you. You can reset your current sit-up count using the "Reset Count" button. 
+
+### Understanding The Video Graphics
+The yellow boxes represent the tracked area calculated by the tracker. The red dots are the centroid of each yellow box. The blue dots are the starting points for the tracked objects. The black ring around the knee box represents the area for which your head must enter in order for the application to register that you have reached the top of a sit-up. 
