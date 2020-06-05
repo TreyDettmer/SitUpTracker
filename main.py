@@ -170,22 +170,27 @@ class SitUpTracker:
         """ Define the regions of interest. (Head size, head tracking point, knee tracking point)"""
 
         if self.frame is not None:
-            playsound("click_sound.mp3");
-            self.waitForCalibrationConfirmation = True;
+            playsound("sounds/click_sound.mp3");
 
             self.frame = cv2.resize(self.frame, (960, 540));
             if self.mirrorVideo:
                 self.frame = cv2.flip(self.frame,1);
             bboxes = cv2.selectROIs("Select Keypoints", self.frameOg, True, False);
-            while len(bboxes) != 3:
-                bboxes = cv2.selectROIs("Select Keypoints", self.frameOg, True, False);
+            
+            if len(bboxes) != 3:
+                self.multiTracker = None
+                self.bboxes = []
+                self.waitForCalibrationConfirmation = False;
+                cv2.destroyWindow("Select Keypoints");
+                self.resolveError();
+                return
             temp = [];
             for i in range(len(bboxes)):
                 box = (bboxes[i][0], bboxes[i][1], bboxes[i][2], bboxes[i][3]);
                 temp.append(box);
 
             self.multiTracker = cv2.MultiTracker_create();
-
+            self.waitForCalibrationConfirmation = True;
             #the first box is for determining the head height so don't track it
             if len(temp) > 2:
                 headBox = temp.pop(0);
@@ -206,7 +211,7 @@ class SitUpTracker:
 
     def confirmCalibration(self):
         """ Start tracking the user's head and knee. """
-        playsound("click2_sound.mp3");
+        playsound("sounds/click2_sound.mp3");
         self.waitForCalibrationConfirmation = not self.waitForCalibrationConfirmation;
         self.calibrationSitUp = True;
 
@@ -239,7 +244,7 @@ class SitUpTracker:
     def soundFinishedAlarm(self):
         """ The user reached the goal so stop tracking and play a happy sound. """
         self.reachedGoal = True;
-        playsound("bell_chime_alert.mp3")
+        playsound("sounds/bell_chime_alert.mp3")
 
 
     def calculateSitUp(self):
