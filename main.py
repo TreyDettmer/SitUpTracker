@@ -176,7 +176,7 @@ class SitUpTracker:
             if self.mirrorVideo:
                 self.frame = cv2.flip(self.frame,1);
             bboxes = cv2.selectROIs("Select Keypoints", self.frameOg, True, False);
-            
+
             if len(bboxes) != 3:
                 self.multiTracker = None
                 self.bboxes = []
