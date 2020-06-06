@@ -21,7 +21,7 @@ Clone this repository. Using the command prompt, navigate to the repository's di
 
 When the application is ran, you should see your webcam's live feed appear on the screen. If not, check here. On the right hand side of the screen type in how many sit-ups that you plan to do. When finished typing, click the "Done" button. 
 
-Set your webcam view so that you can lay down and do a complete situp with your head and knees in the frame. Make sure that your knees are on the right side of the screen. You can mirror the video by pressing the "Mirror Video" button.
+Set your webcam view so that you can lay down and do a complete sit-up with your head and knees in the frame. Make sure that your knees are on the right side of the screen. You can mirror the video by pressing the "Mirror Video" button.
 
 ![Correct](misc/SitupCorrectView.JPG) ![Wrong](misc/SitupWrongView.JPG)
 
@@ -30,7 +30,7 @@ Lay down as if you are at the beginning of a sit-up and say "Calibrate". The app
 
 Now press the Escape key.
 
-Get back into sit-up position and line your head and knee up with the yellow boxes. When you are ready for the application to start tracking your movement, say "Confirm". You should here a sound from the application notifying you that tracking has begun.
+Get back into sit-up position and line your head and knee up with the yellow boxes. When you are ready for the application to start tracking your movement, say "Confirm". You should here a sound from the application notifying you that tracking has begun. Now start doing sit-ups!
 
 ### Tracking Errors
 Occasionally, the application may lose track of your head or knee location. If you notice this or the right side of the screen turns red (signifying that the tracker has failed), recalibrate the application (i.e. redraw the boxes around your whole head, specific head region, and knee region).
